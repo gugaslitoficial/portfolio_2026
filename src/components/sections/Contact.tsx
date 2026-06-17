@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server'
 import { ContactForm } from './ContactForm'
+import { SectionHeader } from '@/components/ui/SectionHeader'
 
 export async function Contact() {
   const t = await getTranslations('contact')
@@ -32,15 +33,12 @@ export async function Contact() {
         >
           {/* Left — info */}
           <div>
-            <p className="font-mono text-[13px] tracking-[0.04em] text-accent mb-[18px]">
-              {t('label')}
-            </p>
-            <h2
-              className="font-display font-semibold leading-[1.04] tracking-[-0.02em] text-foreground text-balance mb-5"
-              style={{ fontSize: 'clamp(28px, 4.2vw, 44px)', maxWidth: '14ch' }}
-            >
-              {t('heading')}
-            </h2>
+            <SectionHeader
+              label={t('label')}
+              heading={t('heading')}
+              headingClass="text-balance mb-5"
+              headingStyle={{ fontSize: 'clamp(28px, 4.2vw, 44px)', maxWidth: '14ch' }}
+            />
             <p
               className="text-muted leading-[1.7] text-pretty mb-[34px]"
               style={{ fontSize: 'clamp(15px, 1.6vw, 17px)', maxWidth: '38ch' }}

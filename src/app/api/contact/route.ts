@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { sendContactEmail } from '@/lib/email'
 
 export async function POST(request: NextRequest) {
   const body = await request.json()
@@ -12,7 +13,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Missing fields' }, { status: 400 })
   }
 
-  console.log('[contact]', { name, email, message: message.slice(0, 100) })
+  await sendContactEmail({ name, email, message })
 
   return NextResponse.json({ ok: true })
 }

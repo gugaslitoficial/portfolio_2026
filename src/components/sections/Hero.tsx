@@ -93,7 +93,7 @@ export async function Hero() {
       <div className="relative z-2 max-w-285 mx-auto w-full px-5 md:px-10 py-12">
         {/* Status badge */}
         <div
-          className="inline-flex items-center gap-[9px] px-3.5 py-[7px] mb-[30px] font-mono text-[13px] text-muted border border-[#1f2025] bg-surface rounded-full"
+          className="inline-flex items-center gap-2.25 px-3.5 py-1.75 mb-7.5 font-mono text-[13px] text-muted border border-[#1f2025] bg-surface rounded-full"
         >
           <span className="relative flex" style={{ width: '8px', height: '8px' }}>
             <span
@@ -107,7 +107,7 @@ export async function Hero() {
 
         {/* Name */}
         <h1
-          className="font-display font-bold text-white leading-[0.97] tracking-[-0.038em] mb-[22px]"
+          className="font-display font-bold text-white leading-[0.97] tracking-[-0.038em] mb-5.5"
           style={{ fontSize: 'clamp(48px, 8.4vw, 96px)', maxWidth: '13ch' }}
         >
           Gustavo Romão
@@ -130,18 +130,16 @@ export async function Hero() {
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-wrap items-center gap-3.5 mb-[30px]">
+        <div className="flex flex-wrap items-center gap-3.5 mb-7.5">
           <a
             href="#projetos"
-            className="inline-flex items-center gap-2 bg-accent text-[#06070a] font-semibold text-[15px] rounded-[11px] transition-all duration-200 hover:bg-[#80a4ff] hover:-translate-y-0.5 hover:shadow-[0_12px_34px_-12px_rgba(91,140,255,0.65)]"
-            style={{ paddingLeft: '22px', paddingRight: '22px', paddingTop: '13px', paddingBottom: '13px' }}
+            className="inline-flex items-center gap-2 bg-accent text-[#06070a] font-semibold text-[15px] rounded-[11px] px-5.5 py-3.25 transition-all duration-200 hover:bg-[#80a4ff] hover:-translate-y-0.5 hover:shadow-[0_12px_34px_-12px_rgba(91,140,255,0.65)]"
           >
             {t('cta1')} →
           </a>
           <a
             href="#contato"
-            className="inline-flex items-center border border-border-light rounded-[11px] text-[15px] font-medium text-foreground transition-all duration-200 hover:border-[#3a3b42] hover:bg-[#101013]"
-            style={{ paddingLeft: '22px', paddingRight: '22px', paddingTop: '13px', paddingBottom: '13px' }}
+            className="inline-flex items-center border border-border-light rounded-[11px] text-[15px] font-medium text-foreground px-5.5 py-3.25 transition-all duration-200 hover:border-[#3a3b42] hover:bg-[#101013]"
           >
             {t('cta2')}
           </a>

@@ -1,12 +1,4 @@
-import type { Experience } from '@/types/experience'
-
-export interface BilingualExperience {
-  period: string
-  role: string
-  company: string
-  descPt: string
-  descEn: string
-}
+import type { Experience, BilingualExperience } from '@/types/experience'
 
 export const experiences: BilingualExperience[] = [
   {

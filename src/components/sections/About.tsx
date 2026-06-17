@@ -1,4 +1,5 @@
 import { getTranslations } from 'next-intl/server'
+import { SectionHeader } from '@/components/ui/SectionHeader'
 
 export async function About() {
   const t = await getTranslations('about')
@@ -13,18 +14,15 @@ export async function About() {
         className="[max-width:1140px] mx-auto reveal-on-scroll"
         style={{ padding: '0 clamp(20px, 5vw, 40px)' }}
       >
-        <p className="font-mono text-[13px] tracking-[0.04em] text-accent mb-[22px]">
-          {t('label')}
-        </p>
-
         <div className="grid gap-[clamp(28px,5vw,64px)] items-start" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))' }}>
           {/* Heading */}
-          <h2
-            className="font-display font-semibold leading-[1.06] tracking-[-0.02em] text-foreground text-balance"
-            style={{ fontSize: 'clamp(28px, 4vw, 42px)', maxWidth: '16ch' }}
-          >
-            {t('heading')}
-          </h2>
+          <SectionHeader
+            label={t('label')}
+            heading={t('heading')}
+            labelClass="mb-[22px]"
+            headingClass="leading-[1.06] tracking-[-0.02em] text-balance"
+            headingStyle={{ fontSize: 'clamp(28px, 4vw, 42px)', maxWidth: '16ch' }}
+          />
 
           {/* Text + metadata */}
           <div>

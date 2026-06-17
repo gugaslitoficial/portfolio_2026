@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import { Space_Grotesk, Geist, JetBrains_Mono } from 'next/font/google'
 import { NextIntlClientProvider } from 'next-intl'
@@ -26,6 +27,28 @@ const jetbrainsMono = JetBrains_Mono({
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const isPt = locale === 'pt'
+  return {
+    title: isPt
+      ? 'Gustavo Romão — Desenvolvedor Full Stack'
+      : 'Gustavo Romão — Full Stack Developer',
+    description: isPt
+      ? 'Portfólio de Gustavo Romão, desenvolvedor full stack especializado em React, Next.js e TypeScript.'
+      : 'Portfolio of Gustavo Romão, full stack developer specializing in React, Next.js and TypeScript.',
+    openGraph: {
+      type: 'website',
+      locale: isPt ? 'pt_BR' : 'en_US',
+      siteName: 'Gustavo Romão',
+    },
+  }
 }
 
 export default async function LocaleLayout({

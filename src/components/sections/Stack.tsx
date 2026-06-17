@@ -1,5 +1,6 @@
 import { getTranslations, getLocale } from 'next-intl/server'
 import { stack } from '@/content/data/stack'
+import { SectionHeader } from '@/components/ui/SectionHeader'
 
 export async function Stack() {
   const t = await getTranslations('stack')
@@ -15,15 +16,12 @@ export async function Stack() {
         className="[max-width:1140px] mx-auto reveal-on-scroll"
         style={{ padding: '0 clamp(20px, 5vw, 40px)' }}
       >
-        <p className="font-mono text-[13px] tracking-[0.04em] text-accent mb-[18px]">
-          {t('label')}
-        </p>
-        <h2
-          className="font-display font-semibold leading-[1.04] tracking-[-0.02em] text-foreground mb-[46px]"
-          style={{ fontSize: 'clamp(28px, 4.2vw, 44px)' }}
-        >
-          {t('heading')}
-        </h2>
+        <SectionHeader
+          label={t('label')}
+          heading={t('heading')}
+          headingClass="mb-[46px]"
+          headingStyle={{ fontSize: 'clamp(28px, 4.2vw, 44px)' }}
+        />
 
         <div
           className="grid gap-4"
