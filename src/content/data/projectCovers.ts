@@ -7,5 +7,8 @@
  *   'meu-projeto': '/images/projects/meu-projeto.png',
  */
 export const projectCovers: Record<string, string> = {
-  // 'portfolio-gustavo-romao': '/images/projects/portfolio-gustavo-romao.png',
+  'portfolio_2026': '/images/projects/portfolio_2026.png',
+  'weather_web': '/images/projects/weather_web.png',
+  'frontend_TaskManager': '/images/projects/frontend_TaskManager.png',
+  'buscador_cep': '/images/projects/buscador_cep.png',
 }
