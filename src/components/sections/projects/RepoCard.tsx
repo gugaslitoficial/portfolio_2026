@@ -27,8 +27,7 @@ export function RepoCard({ repo, starsLabel }: RepoCardProps) {
             className="absolute inset-0 z-0 transition-[transform,filter] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.06] group-hover:brightness-[1.12]"
             style={{
               backgroundColor: '#0d0e12',
-              backgroundImage:
-                'repeating-linear-gradient(135deg, rgba(91,140,255,0.04) 0px, rgba(91,140,255,0.04) 1px, transparent 1px, transparent 14px)',
+              backgroundImage: 'repeating-linear-gradient(135deg, rgba(91,140,255,0.04) 0px, rgba(91,140,255,0.04) 1px, transparent 1px, transparent 14px)',
             }}
           />
         )
@@ -38,12 +37,12 @@ export function RepoCard({ repo, starsLabel }: RepoCardProps) {
         {repo.name}
       </h3>
       {repo.description && (
-        <p className="text-[14.5px] leading-[1.6] text-medium text-pretty mb-[18px]" style={{ maxWidth: '46ch' }}>
+        <p className="text-[14.5px] leading-[1.6] text-medium text-pretty mb-4.5" style={{ maxWidth: '46ch' }}>
           {repo.description}
         </p>
       )}
       {repo.topics.length > 0 && (
-        <div className="flex flex-wrap gap-[7px] mb-5">
+        <div className="flex flex-wrap gap-1.75 mb-5">
           {repo.topics.slice(0, 5).map((topic) => (
             <Badge key={topic}>{topic}</Badge>
           ))}

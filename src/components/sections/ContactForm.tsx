@@ -37,8 +37,7 @@ export function ContactForm({ strings: s }: { strings: Strings }) {
     }
   }
 
-  const inputClass =
-    'w-full bg-background border border-[#222329] rounded-[10px] px-[13px] py-[11px] text-foreground font-sans text-[14.5px] outline-none transition-colors duration-200 focus:border-accent placeholder:text-dim'
+  const inputClass = 'w-full bg-background border border-[#222329] rounded-[10px] px-[13px] py-[11px] text-foreground font-sans text-[14.5px] outline-none transition-colors duration-200 focus:border-accent placeholder:text-dim'
 
   return (
     <form
@@ -76,7 +75,7 @@ export function ContactForm({ strings: s }: { strings: Strings }) {
           required
           rows={4}
           placeholder={s.formMsgPh}
-          className={`${inputClass} resize-vertical leading-[1.5]`}
+          className={`${inputClass} resize-vertical leading-normal`}
           disabled={status === 'loading' || status === 'sent'}
         />
       </label>
@@ -85,20 +84,20 @@ export function ContactForm({ strings: s }: { strings: Strings }) {
         <button
           type="submit"
           disabled={status === 'loading'}
-          className="bg-accent text-[#06070a] font-semibold text-[15px] px-4 py-[13px] rounded-[11px] border-none cursor-pointer font-sans transition-all duration-200 hover:bg-[#80a4ff] hover:-translate-y-px disabled:opacity-60 disabled:cursor-not-allowed"
+          className="bg-accent text-[#06070a] font-semibold text-[15px] px-4 py-3.25 rounded-[11px] border-none cursor-pointer font-sans transition-all duration-200 hover:bg-[#80a4ff] hover:-translate-y-px disabled:opacity-60 disabled:cursor-not-allowed"
         >
           {status === 'loading' ? '…' : `${s.formSend} →`}
         </button>
       )}
 
       {status === 'sent' && (
-        <div className="border border-success/30 bg-success/10 text-success px-4 py-[14px] rounded-[11px] text-[13.5px] text-center font-mono leading-[1.5]">
+        <div className="border border-success/30 bg-success/10 text-success px-4 py-3.5 rounded-[11px] text-[13.5px] text-center font-mono leading-normal">
           {s.formSent}
         </div>
       )}
 
       {status === 'error' && (
-        <div className="border border-red-500/30 bg-red-500/10 text-red-400 px-4 py-[14px] rounded-[11px] text-[13.5px] text-center font-mono leading-[1.5]">
+        <div className="border border-red-500/30 bg-red-500/10 text-red-400 px-4 py-3.5 rounded-[11px] text-[13.5px] text-center font-mono leading-normal">
           {s.formError}
         </div>
       )}

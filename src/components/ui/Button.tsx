@@ -8,7 +8,7 @@ export function Button({ variant = 'primary', className, style, children, ...pro
   return (
     <button
       className={cn(
-        'inline-flex items-center justify-center font-semibold text-[15px] rounded-[11px] transition-all duration-200 cursor-pointer border-none px-[22px] py-[13px]',
+        'inline-flex items-center justify-center font-semibold text-[15px] rounded-[11px] transition-all duration-200 cursor-pointer border-none px-5.5 py-3.25',
         variant === 'primary' &&
           'bg-accent text-[#06070a] hover:bg-[#80a4ff] hover:-translate-y-0.5 hover:shadow-[0_12px_34px_-12px_rgba(91,140,255,0.65)]',
         variant === 'secondary' &&

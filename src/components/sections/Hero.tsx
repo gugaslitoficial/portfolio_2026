@@ -4,11 +4,7 @@ export async function Hero() {
   const t = await getTranslations('hero')
 
   return (
-    <header
-      id="top"
-      className="relative overflow-hidden border-b border-border-subtle min-h-screen flex items-center"
-    >
-      {/* Animated SVG network — right side decoration */}
+    <header id="top" className="relative overflow-hidden border-b border-border-subtle min-h-screen flex items-center" >
       <div
         aria-hidden="true"
         className="hidden md:block absolute top-1/2 -translate-y-1/2 pointer-events-none z-1 opacity-85"
@@ -16,10 +12,8 @@ export async function Hero() {
           right: 'clamp(-120px, -4vw, 0px)',
           width: 'min(52vw, 580px)',
           aspectRatio: '1/1',
-          WebkitMaskImage:
-            'radial-gradient(circle at 62% 50%, #000 38%, transparent 76%)',
-          maskImage:
-            'radial-gradient(circle at 62% 50%, #000 38%, transparent 76%)',
+          WebkitMaskImage: 'radial-gradient(circle at 62% 50%, #000 38%, transparent 76%)',
+          maskImage: 'radial-gradient(circle at 62% 50%, #000 38%, transparent 76%)',
         }}
       >
         <svg
@@ -36,8 +30,6 @@ export async function Hero() {
             <path id="grp4" d="M190 310 C240 278 270 240 300 200" />
             <path id="grp5" d="M300 200 C332 178 350 156 374 130" />
           </g>
-
-          {/* Animated particles along paths */}
           <g fill="#5b8cff">
             <circle r="3">
               <animateMotion dur="4s" repeatCount="indefinite" calcMode="linear">
@@ -65,8 +57,6 @@ export async function Hero() {
               </animateMotion>
             </circle>
           </g>
-
-          {/* Static nodes */}
           <g>
             <circle cx="60" cy="200" r="6.5" fill="#0a0a0c" stroke="#5b8cff" strokeWidth="1.5" />
             <circle
@@ -88,10 +78,7 @@ export async function Hero() {
           </g>
         </svg>
       </div>
-
-      {/* Content */}
       <div className="relative z-2 max-w-285 mx-auto w-full px-5 md:px-10 py-12">
-        {/* Status badge */}
         <div
           className="inline-flex items-center gap-2.25 px-3.5 py-1.75 mb-7.5 font-mono text-[13px] text-muted border border-[#1f2025] bg-surface rounded-full"
         >
@@ -104,32 +91,24 @@ export async function Hero() {
           </span>
           {t('status')}
         </div>
-
-        {/* Name */}
         <h1
           className="font-display font-bold text-white leading-[0.97] tracking-[-0.038em] mb-5.5"
           style={{ fontSize: 'clamp(48px, 8.4vw, 96px)', maxWidth: '13ch' }}
         >
           Gustavo Romão
         </h1>
-
-        {/* Role */}
         <p
           className="font-mono text-accent tracking-[0.01em] mb-7"
           style={{ fontSize: 'clamp(13px, 2vw, 16px)' }}
         >
           {t('role')}
         </p>
-
-        {/* Pitch */}
         <p
           className="text-medium leading-[1.55] mb-10 text-pretty"
           style={{ fontSize: 'clamp(17px, 2.4vw, 23px)', maxWidth: '44ch' }}
         >
           {t('pitch')}
         </p>
-
-        {/* CTAs */}
         <div className="flex flex-wrap items-center gap-3.5 mb-7.5">
           <a
             href="#projetos"
@@ -161,8 +140,6 @@ export async function Hero() {
             LinkedIn ↗
           </a>
         </div>
-
-        {/* Location */}
         <p className="font-mono text-[13px] text-dim">{t('location')}</p>
       </div>
     </header>

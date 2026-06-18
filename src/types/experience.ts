@@ -6,7 +6,8 @@ export interface Experience {
 }
 
 export interface BilingualExperience {
-  period: string
+  periodPt: string
+  periodEn: string
   role: string
   company: string
   descPt: string

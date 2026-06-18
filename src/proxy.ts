@@ -8,6 +8,4 @@ export function proxy(request: NextRequest) {
   return handleI18n(request)
 }
 
-export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|favicon\\.ico|.*\\..*).*)', '/'],
-}
+export const config = { matcher: ['/((?!api|_next/static|_next/image|favicon\\.ico|.*\\..*).*)', '/'] }

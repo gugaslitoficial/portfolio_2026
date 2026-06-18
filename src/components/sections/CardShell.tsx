@@ -13,13 +13,12 @@ export function CardShell({ background, children }: CardShellProps) {
     >
       {background}
       <div
-        className="absolute inset-0 [z-index:1]"
+        className="absolute inset-0 z-1"
         style={{
-          background:
-            'linear-gradient(to top, rgba(10,10,12,0.97) 6%, rgba(10,10,12,0.72) 42%, rgba(10,10,12,0.2) 100%)',
+          background: 'linear-gradient(to top, rgba(10,10,12,0.97) 6%, rgba(10,10,12,0.72) 42%, rgba(10,10,12,0.2) 100%)',
         }}
       />
-      <div className="relative [z-index:2] p-[26px]">{children}</div>
+      <div className="relative z-2 p-6.5">{children}</div>
     </article>
   )
 }

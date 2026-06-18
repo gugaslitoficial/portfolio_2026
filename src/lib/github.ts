@@ -7,10 +7,7 @@ export async function getGitHubRepos(): Promise<Project[]> {
   try {
     const res = await fetch(
       `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100&type=public`,
-      {
-        next: { revalidate: 3600 },
-        headers: { Accept: 'application/vnd.github+json' },
-      },
+      { cache: 'no-store', headers: { Accept: 'application/vnd.github+json' } },
     )
     if (!res.ok) return []
     const data = await res.json()

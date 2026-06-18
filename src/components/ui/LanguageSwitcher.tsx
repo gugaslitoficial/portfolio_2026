@@ -11,9 +11,7 @@ export function LanguageSwitcher() {
   const [isPending, startTransition] = useTransition()
 
   const switchTo = (next: Locale) => {
-    startTransition(() => {
-      router.replace(pathname, { locale: next })
-    })
+    startTransition(() => { router.replace(pathname, { locale: next }) })
   }
 
   return (
@@ -24,7 +22,7 @@ export function LanguageSwitcher() {
         disabled={isPending}
         aria-pressed={locale === 'pt'}
         className={[
-          'font-mono text-[12px] rounded-[7px] border-none cursor-pointer transition-all duration-200 px-[11px] py-[5px]',
+          'font-mono text-[12px] rounded-[7px] border-none cursor-pointer transition-all duration-200 px-2.75 py-1.25',
           locale === 'pt'
             ? 'bg-border text-foreground'
             : 'bg-transparent text-dim hover:text-muted',
@@ -38,7 +36,7 @@ export function LanguageSwitcher() {
         disabled={isPending}
         aria-pressed={locale === 'en'}
         className={[
-          'font-mono text-[12px] rounded-[7px] border-none cursor-pointer transition-all duration-200 px-[11px] py-[5px]',
+          'font-mono text-[12px] rounded-[7px] border-none cursor-pointer transition-all duration-200 px-2.75 py-1.25',
           locale === 'en'
             ? 'bg-border text-foreground'
             : 'bg-transparent text-dim hover:text-muted',
