@@ -71,7 +71,7 @@ export function RepoCard({ repo, starsLabel }: RepoCardProps) {
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
           />
         </div>
-        <div className="flex flex-col justify-end flex-grow p-6.5 bg-surface border-t border-[#1f2025]">
+        <div className="flex flex-col justify-end grow p-6.5 bg-surface border-t border-[#1f2025]">
           <CardContent repo={repo} starsLabel={starsLabel} />
         </div>
       </article>

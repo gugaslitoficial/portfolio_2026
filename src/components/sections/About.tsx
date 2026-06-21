@@ -6,7 +6,7 @@ export async function About() {
   return (
     <section id="sobre" className="relative" style={{ padding: 'clamp(72px, 11vh, 128px) 0' }} >
       <div className="max-w-285 mx-auto reveal-on-scroll" style={{ padding: '0 clamp(20px, 5vw, 40px)' }} >
-        <p className="font-mono text-[13px] tracking-[0.04em] text-accent mb-[22px]">
+        <p className="font-mono text-[13px] tracking-[0.04em] text-accent mb-5.5">
           {t('label')}
         </p>
 
