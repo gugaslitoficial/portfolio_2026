@@ -12,7 +12,12 @@ export async function getGitHubRepos(): Promise<Project[]> {
     if (!res.ok) return []
     const data = await res.json()
     return (data as GitHubRepo[])
-      .filter((r) => !r.fork && !r.archived)
+      .filter((r) =>
+        !r.fork &&
+        !r.archived &&
+        !r.name.toLowerCase().includes('backend') &&
+        !!r.homepage
+      )
       .map((r) => ({
         name: r.name,
         description: r.description,

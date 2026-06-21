@@ -8,31 +8,9 @@ interface RepoCardProps {
   starsLabel: string
 }
 
-export function RepoCard({ repo, starsLabel }: RepoCardProps) {
+function CardContent({ repo, starsLabel }: RepoCardProps) {
   return (
-    <CardShell
-      background={
-        repo.image ? (
-          <div className="absolute inset-0 z-0 overflow-hidden transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.06]">
-            <Image
-              src={repo.image}
-              alt={repo.name}
-              fill
-              className="object-cover"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
-            />
-          </div>
-        ) : (
-          <div
-            className="absolute inset-0 z-0 transition-[transform,filter] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.06] group-hover:brightness-[1.12]"
-            style={{
-              backgroundColor: '#0d0e12',
-              backgroundImage: 'repeating-linear-gradient(135deg, rgba(91,140,255,0.04) 0px, rgba(91,140,255,0.04) 1px, transparent 1px, transparent 14px)',
-            }}
-          />
-        )
-      }
-    >
+    <>
       <h3 className="font-display font-semibold text-[20px] text-white tracking-[-0.01em] mb-2.5">
         {repo.name}
       </h3>
@@ -73,6 +51,46 @@ export function RepoCard({ repo, starsLabel }: RepoCardProps) {
           </span>
         )}
       </div>
+    </>
+  )
+}
+
+export function RepoCard({ repo, starsLabel }: RepoCardProps) {
+  if (repo.image) {
+    return (
+      <article
+        className="border border-[#1f2025] rounded-[18px] overflow-hidden flex flex-col bg-surface transition-all duration-300 hover:border-[#2e2f36] hover:-translate-y-0.75 group"
+        style={{ minHeight: '400px' }}
+      >
+        <div className="relative flex-none overflow-hidden" style={{ height: '220px' }}>
+          <Image
+            src={repo.image}
+            alt={repo.name}
+            fill
+            className="object-cover object-top transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
+          />
+        </div>
+        <div className="flex flex-col justify-end flex-grow p-6.5 bg-surface border-t border-[#1f2025]">
+          <CardContent repo={repo} starsLabel={starsLabel} />
+        </div>
+      </article>
+    )
+  }
+
+  return (
+    <CardShell
+      background={
+        <div
+          className="absolute inset-0 z-0 transition-[transform,filter] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.06] group-hover:brightness-[1.12]"
+          style={{
+            backgroundColor: '#0d0e12',
+            backgroundImage: 'repeating-linear-gradient(135deg, rgba(91,140,255,0.04) 0px, rgba(91,140,255,0.04) 1px, transparent 1px, transparent 14px)',
+          }}
+        />
+      }
+    >
+      <CardContent repo={repo} starsLabel={starsLabel} />
     </CardShell>
   )
 }
