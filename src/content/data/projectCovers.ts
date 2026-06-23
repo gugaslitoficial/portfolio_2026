@@ -11,4 +11,5 @@ export const projectCovers: Record<string, string> = {
   'weather_web': '/images/projects/weather_web.png',
   'frontend_TaskManager': '/images/projects/frontend_TaskManager.png',
   'buscador_cep': '/images/projects/buscador_cep.png',
+  'maxilearn': '/images/projects/maxilearn.png'
 }
